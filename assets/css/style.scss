@@ -1,0 +1,340 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* 전체 레이아웃 */
+.wrapper {
+  width: min(1400px, 92vw);
+  max-width: none;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  column-gap: 64px;
+  align-items: start;
+}
+
+/* Minimal 기본 float 제거 */
+header,
+section,
+footer {
+  float: none !important;
+  width: auto;
+}
+
+/* 왼쪽 프로필 영역 */
+header {
+  position: sticky;
+  top: 40px;
+  align-self: start;
+  overflow: visible;
+  max-height: none;
+}
+
+/* 헤더 내부 폭 통일 */
+header > * {
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 이름 */
+header h1,
+header h1 a,
+header h1 a:visited {
+  color: #009000 !important;
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: 0 auto 20px auto;
+}
+
+/* 사진 */
+header img {
+  display: block;
+  margin: 0 auto 16px auto;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #009000;
+}
+
+/* 소개 */
+header p {
+  text-align: center;
+  margin: 0 auto 18px auto;
+  line-height: 1.5;
+}
+
+/* 공통 링크 */
+a,
+a:visited {
+  color: #009000;
+}
+
+a:hover {
+  color: #009000;
+  font-weight: 700;
+}
+
+/* 연락처 링크 */
+.contact-links {
+  width: 100%;
+  margin: 18px auto 0 auto;
+}
+
+.contact-links div {
+  margin: 6px 0;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  text-align: left;
+}
+
+/* 오른쪽 본문 */
+section {
+  min-width: 0;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* 네비게이션 */
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  padding: 14px 0;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e5e5e5;
+  background: #ffffff;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #009000 !important;
+  font-weight: 600;
+}
+
+.nav-bar a:hover {
+  opacity: 0.7;
+}
+
+/* 본문 타이포 */
+section h1,
+section h2,
+section h3 {
+  margin-top: 24px;
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+
+section h2 {
+  font-size: 22px;
+}
+
+section p {
+  margin: 12px 0;
+  max-width: 900px;
+}
+
+section ul {
+  padding-left: 20px;
+}
+
+section li {
+  margin-bottom: 14px;
+}
+
+/* ========================= */
+/* Awards */
+/* ========================= */
+
+.awards-list {
+  margin-top: 8px;
+}
+
+.award-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  padding: 4px 0;
+}
+
+.award-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.award-org {
+  color: #666;
+}
+
+.award-date {
+  flex-shrink: 0;
+  min-width: 90px;
+  text-align: right;
+  white-space: nowrap;
+  color: #777;
+  font-style: italic;
+  font-size: 0.95em;
+}
+
+/* ========================= */
+/* Profile scene */
+/* ========================= */
+
+.profile-scene {
+  width: 100%;
+  max-width: 100%;
+  margin: 22px auto 0 auto;
+  padding-top: 6px;
+  overflow: hidden;
+}
+
+.profile-scene pre {
+  margin: 0;
+  display: block;
+  width: 100%;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+  line-height: 1.02;
+  color: #666;
+  background: none;
+  border: none;
+  padding: 0;
+  white-space: pre;
+  overflow: hidden;
+}
+
+/* 기본 눈은 감은 상태 */
+.profile-scene .eye {
+  display: inline-block;
+  width: 1ch;
+  text-align: center;
+  position: relative;
+}
+
+/* hover 시 눈 뜨기 */
+.profile-scene:hover .eye {
+  color: transparent;
+}
+
+.profile-scene:hover .eye::after {
+  content: "◉";
+  color: #666;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1ch;
+  text-align: center;
+  animation: wakeEyes 0.22s ease 1;
+}
+
+/* 팔 */
+.profile-scene .arm {
+  display: inline-block;
+  width: 1ch;
+  text-align: center;
+}
+
+/* hover 시 손끝이 바깥으로 흔들리는 느낌 */
+.profile-scene:hover .arm-right {
+  animation: handWaveRight 0.9s ease-in-out 2;
+}
+
+.profile-scene:hover .arm-left {
+  animation: handWaveLeft 0.9s ease-in-out 2;
+}
+
+@keyframes wakeEyes {
+  0% {
+    transform: translateY(1px);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes handWaveRight {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(1px, -2px); }
+  50%  { transform: translate(0, 0); }
+  75%  { transform: translate(1px, -2px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes handWaveLeft {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-1px, -2px); }
+  50%  { transform: translate(0, 0); }
+  75%  { transform: translate(-1px, -2px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* footer */
+footer {
+  grid-column: 2;
+  margin-top: 40px;
+  color: #777;
+  font-size: 14px;
+}
+
+/* 모바일 */
+@media screen and (max-width: 960px) {
+  .wrapper {
+    width: min(92vw, 900px);
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  header {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+
+  header > * {
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  header img {
+    width: 180px;
+    height: 180px;
+  }
+
+  section,
+  footer {
+    grid-column: auto;
+  }
+
+  .award-item {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .award-date {
+    text-align: left;
+    min-width: auto;
+  }
+
+  .profile-scene {
+    margin-top: 22px;
+  }
+
+  .profile-scene pre {
+    font-size: 11px;
+  }
+}

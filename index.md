@@ -7,7 +7,7 @@
 
 # It's a pleasure to meet you, even if indirectly.
 
-I am currently a **research intern in the [Medical Imaging and Computer Vision (MICV) Lab](https://micv.yonsei.ac.kr/home) at Yonsei University**, advised by **Professor Seong Jae Hwang**.
+I am currently a **research intern in the [Medical Imaging and Computer Vision (MICV) Lab](https://micv.yonsei.ac.kr/home) at Yonsei University**, advised by [**Professor Seong Jae Hwang**](https://micv.yonsei.ac.kr/seongjae).
 
 My research interests lie in **vision-language-action (VLA) models, world models, and embodied AI**.
 
@@ -27,7 +27,10 @@ I believe intelligence emerges through interaction with the physical world. This
   <div class="update-item">
     <time class="update-date" datetime="2026-08">Aug 2026</time>
     <div class="update-copy">Started as a <strong>Research Intern</strong> at the <a href="https://micv.yonsei.ac.kr/home" target="_blank" rel="noopener noreferrer">MICV Lab</a>, Yonsei University.</div>
-    <span class="update-brand update-brand-text update-brand-micv" aria-label="MICV Lab">MICV</span>
+    <span class="update-brand update-brand-text update-brand-micv" aria-label="MICV Lab, Yonsei University">
+      <img class="update-brand-mark" src="https://yonsei.ac.kr/sites/en_sc/images/sub/img-symbol1.png" alt="" />
+      <span>MICV</span>
+    </span>
   </div>
 
   <div class="update-item">

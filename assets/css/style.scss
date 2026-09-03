@@ -121,6 +121,8 @@ a:hover {
   display: inline-grid;
   grid-template-areas: "email";
   appearance: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
   margin: 0;
   padding: 0;
   border: 0;
@@ -149,7 +151,10 @@ a:hover {
   font-weight: 700;
 }
 
-.copy-email:focus {
+.copy-email:focus,
+.copy-email:active {
+  color: #009000 !important;
+  -webkit-text-fill-color: #009000;
   font-weight: 400;
 }
 

@@ -23,9 +23,15 @@
 
         <div class="contact-links">
           <div><a href="https://linkedin.com/in/yeogyeongsong" target="_blank">🔗 <span>LinkedIn</span></a></div>
-          <div><a href="/assets/files/CV_song.pdf" target="_blank">📄 <span>CV</span></a></div>
+          <div><a href="{{ '/assets/files/CV_song.pdf' | relative_url }}?v={{ site.github.build_revision }}" target="_blank" rel="noopener noreferrer">📄 <span>CV</span></a></div>
           <div><a href="https://github.com/0gonge" target="_blank">💻 <span>GitHub</span></a></div>
-          <div>✉️ <a href="mailto:challengef0802@gmail.com">challengef0802@gmail.com</a></div>
+          <div class="email-contact">
+            <span aria-hidden="true">✉️</span>
+            <button class="copy-email" type="button" data-email="challengef0802@gmail.com" data-label="challengef0802@gmail.com" aria-label="Copy email address">
+              <span>challengef0802@gmail.com</span>
+            </button>
+            <span class="copy-feedback" role="status" aria-live="polite">Copied!</span>
+          </div>
         </div>
 
 <div class="profile-scene" aria-hidden="true">
@@ -60,5 +66,6 @@ _____│___________________╱ ╲____________________________________
     </div>
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/section-nav.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/contact-actions.js' | relative_url }}"></script>
   </body>
 </html>

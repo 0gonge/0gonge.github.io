@@ -111,6 +111,66 @@ a:hover {
   font-weight: 700;
 }
 
+.email-contact {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.copy-email {
+  display: inline-grid;
+  grid-template-areas: "email";
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #009000;
+  font: inherit;
+  font-weight: 400;
+  line-height: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.copy-email > span,
+.copy-email::after {
+  grid-area: email;
+}
+
+.copy-email::after {
+  content: attr(data-label);
+  visibility: hidden;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.copy-email:hover {
+  font-weight: 700;
+}
+
+.copy-email:focus {
+  font-weight: 400;
+}
+
+.copy-email:focus-visible {
+  outline: 2px solid #9bc98d;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.copy-feedback {
+  min-width: 46px;
+  color: #777;
+  font-size: 11px;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+.copy-feedback.is-visible {
+  opacity: 1;
+}
+
 /* 오른쪽 본문 */
 section {
   grid-column: 2;

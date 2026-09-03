@@ -1,5 +1,11 @@
 title: YeoGyeong Song
 logo: /assets/images/profile.jpg
-description: AI Researcher<br>Robotics & Embodied AI
+description: ""
 theme: jekyll-theme-minimal
 show_downloads: false
+exclude:
+  - CV_song.pdf
+  - Gemfile
+  - Gemfile.lock
+  - tmp
+  - _notes

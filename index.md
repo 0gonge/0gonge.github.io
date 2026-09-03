@@ -1,31 +1,82 @@
 <div class="nav-bar">
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#awards">Awards</a>
+  <a href="#recent-updates" data-label="Recent Updates"><span>Recent Updates</span></a>
+  <a href="#research-experience" data-label="Research Experience"><span>Research Experience</span></a>
+  <a href="#projects" data-label="Projects"><span>Projects</span></a>
+  <a href="#awards" data-label="Awards"><span>Awards</span></a>
 </div>
 
-# I'm honored to meet you, albeit indirectly
+# It's a pleasure to meet you, even if indirectly.
 
-I enjoy turning ideas into reality. Through building services, I experienced how abstract ideas can evolve into real systems that shape people’s everyday lives. This led me to think more deeply about **how technology becomes embodied and interacts with the physical world**.
+I am currently a **research intern in the [Medical Imaging and Computer Vision (MICV) Lab](https://micv.yonsei.ac.kr/home) at Yonsei University**, advised by **Professor Seong Jae Hwang**.
 
-I believe that true intelligence is not formed in isolation, but grounded in the interaction between perception, action, and physical constraints. This perspective naturally led me to the intersection of computer vision and robotics, where systems must not only perceive but also act in the world.
+My research interests lie in **vision-language-action (VLA) models, world models, and embodied AI**.
 
-I am particularly interested in building robotic systems that can generalize beyond controlled settings and operate robustly in real-world environments.
+I believe intelligence emerges through interaction with the physical world. This motivates me to build reliable, generalizable systems at the intersection of computer vision and robotics.
 
-Currently, I am an intern at **[LG AI Research](https://www.lgresearch.ai/)**, where I work with both simulated and real-world robot data, exploring challenges in data-driven generalization across diverse environments.
+<span class="vision-emoji" aria-hidden="true">🤖</span> Ultimately, I hope to contribute to a safer and better world where robots can take on tasks that are difficult or dangerous for people.
 
-Ultimately, I aim to contribute to a world where robots can take on tasks that are difficult or unsafe for humans.
+<div class="education-note" aria-label="Education">
+  <span class="education-label">Education</span>
+  <span class="education-degree">B.S. in Artificial Intelligence, 2021 – 2026</span>
+  <span class="education-school">College of Knowledge-Based Services Engineering, Sungshin Women’s University, Seoul</span>
+</div>
 
----
+## Recent Updates
 
-## About
-I am interested in embodied AI, robot manipulation, and data-driven generalization.
+<div class="updates-list">
+  <div class="update-item">
+    <time class="update-date" datetime="2026-08">Aug 2026</time>
+    <div class="update-copy">Started as a <strong>Research Intern</strong> at the <a href="https://micv.yonsei.ac.kr/home" target="_blank" rel="noopener noreferrer">MICV Lab</a>, Yonsei University.</div>
+    <span class="update-brand update-brand-text update-brand-micv" aria-label="MICV Lab">MICV</span>
+  </div>
+
+  <div class="update-item">
+    <time class="update-date" datetime="2026-04">Apr 2026</time>
+    <div class="update-copy">Completed my <strong>internship</strong> at <a href="https://www.lgresearch.ai/" target="_blank" rel="noopener noreferrer">LG AI Research</a>.</div>
+    <span class="update-brand update-brand-logo" aria-hidden="true">
+      <img src="https://www.lgresearch.ai/img/common/logo_en.png" alt="" />
+    </span>
+  </div>
+
+</div>
+
+## Research Experience
+
+<div class="experience-list">
+  <article class="experience-item experience-item--yonsei">
+    <div class="experience-header">
+      <div class="experience-main">
+        <h3><a href="https://micv.yonsei.ac.kr/home" target="_blank" rel="noopener noreferrer">Yonsei University</a></h3>
+        <span class="experience-role">— Research Intern · MICV Lab</span>
+      </div>
+      <span class="experience-date"><time datetime="2026-08">Aug 2026</time> – Present</span>
+    </div>
+  </article>
+
+  <article class="experience-item experience-item--lg">
+    <div class="experience-header">
+      <div class="experience-main">
+        <h3><a href="https://www.lgresearch.ai/" target="_blank" rel="noopener noreferrer">LG AI Research</a></h3>
+        <span class="experience-role">— Data Engineering Intern · Physical Intelligence Lab</span>
+      </div>
+      <span class="experience-date"><time datetime="2025-10">Oct 2025</time> – <time datetime="2026-04">Apr 2026</time></span>
+    </div>
+  </article>
+</div>
 
 ## Projects
-- Project details will be added soon.
-- Research and engineering experiences will be organized here.
 
-## <a id="awards"></a>⟡ Awards
+<div class="project-list">
+  <article class="project-item">
+    <div class="project-content">
+      <div class="project-title">RAIN — Robotic Task Generalization with Region-Aware Interaction Networks</div>
+      <div class="project-meta">Co-first author · LG AI Research</div>
+    </div>
+    <span class="project-status">Paper Under Review</span>
+  </article>
+</div>
+
+## Awards
 
 <div class="awards-list">
   <div class="award-item">

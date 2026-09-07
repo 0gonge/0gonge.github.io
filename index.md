@@ -1,9 +1,9 @@
-<div class="nav-bar">
+<nav class="nav-bar" aria-label="Page sections">
   <a href="#recent-updates" data-label="Recent Updates"><span>Recent Updates</span></a>
   <a href="#research-experience" data-label="Research Experience"><span>Research Experience</span></a>
   <a href="#projects" data-label="Projects"><span>Projects</span></a>
   <a href="#awards" data-label="Awards"><span>Awards</span></a>
-</div>
+</nav>
 
 # It's a pleasure to meet you, even if indirectly.
 

@@ -3,9 +3,15 @@
 
 @import "{{ site.theme }}";
 
+/* Own the page gutters instead of inheriting the theme's fixed 50px padding. */
+body {
+  margin: 0;
+  padding: 50px 0;
+}
+
 /* 전체 레이아웃 */
 .wrapper {
-  width: min(1400px, 92vw);
+  width: min(1400px, 92%);
   max-width: none;
   margin: 0 auto;
   display: grid;
@@ -21,6 +27,7 @@ section,
 footer {
   float: none !important;
   width: auto;
+  min-width: 0;
 }
 
 /* 왼쪽 프로필 영역 */
@@ -112,6 +119,7 @@ a:hover {
 }
 
 .email-contact {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -133,6 +141,8 @@ a:hover {
   line-height: inherit;
   text-align: left;
   cursor: pointer;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .copy-email > span,
@@ -165,7 +175,11 @@ a:hover {
 }
 
 .copy-feedback {
-  min-width: 46px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  white-space: nowrap;
+  pointer-events: none;
   color: #777;
   font-size: 11px;
   opacity: 0;
@@ -191,6 +205,7 @@ section {
   top: 0;
   z-index: 100;
   display: flex;
+  flex-wrap: wrap;
   gap: clamp(28px, 3.1vw, 44px);
   justify-content: center;
   padding: 14px 0;
@@ -203,6 +218,8 @@ section {
   display: inline-grid;
   grid-template-areas: "label";
   align-items: center;
+  text-align: center;
+  min-width: 0;
   text-decoration: none;
   color: #009000 !important;
   font-size: 15px;
@@ -253,7 +270,7 @@ section h2 {
   font-size: 23px;
   font-weight: 700;
   color: #1a1a1a;
-  scroll-margin-top: 70px;
+  scroll-margin-top: var(--section-nav-offset, 70px);
   border-bottom: 1px solid #e0e0e0;
   padding-bottom: 8px;
   margin-top: 56px;
@@ -678,7 +695,9 @@ section .experience-header h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .vision-emoji {
+  .vision-emoji,
+  .profile-scene .arm,
+  .profile-scene .eye::after {
     animation: none;
   }
 }
@@ -714,18 +733,25 @@ header footer {
   display: none;
 }
 
-/* 모바일 */
+/* Tablet: reset the Minimal theme's legacy sidebar and section rules. */
 @media screen and (max-width: 960px) {
-  .wrapper {
-    width: min(92vw, 900px);
-    grid-template-columns: 1fr;
-    row-gap: 32px;
+  body {
+    padding: 32px 0;
+  }
+
+  div.wrapper {
+    width: min(900px, calc(100% - 48px));
+    margin: 0 auto;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    row-gap: 28px;
   }
 
   header {
     grid-column: 1;
     grid-row: auto;
     position: static;
+    padding: 0;
     max-height: none;
     overflow: visible;
   }
@@ -747,14 +773,11 @@ header footer {
     grid-row: auto;
   }
 
-  .award-item {
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .award-date {
-    text-align: left;
-    min-width: auto;
+  section {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    overflow-wrap: anywhere;
   }
 
   .nav-bar {
@@ -762,28 +785,132 @@ header footer {
     gap: 10px 26px;
   }
 
-  .update-item {
-    grid-template-columns: 72px minmax(0, 1fr);
-    gap: 12px;
-    padding: 7px 0 7px 12px;
-  }
-
-  .update-brand {
-    grid-column: 2;
-    justify-self: start;
-    margin-top: -4px;
-  }
-
   .profile-scene {
     margin-top: 22px;
+    max-width: 380px;
   }
 
   .profile-scene pre {
-    font-size: 11px;
+    font-size: 10px;
   }
 }
 
+/* Phone: compact profile, stable two-row navigation, full-width content. */
 @media screen and (max-width: 620px) {
+  body {
+    padding: 24px 0;
+  }
+
+  div.wrapper {
+    width: calc(100% - 32px);
+    row-gap: 24px;
+  }
+
+  header > * {
+    max-width: 100%;
+  }
+
+  header h1,
+  header h1 a {
+    margin-bottom: 12px;
+    font-size: 26px;
+  }
+
+  header img {
+    width: 144px;
+    height: 144px;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 18px;
+    margin-top: 4px;
+  }
+
+  .contact-links div {
+    margin: 0;
+  }
+
+  .contact-links a,
+  .copy-email {
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .email-contact {
+    flex-basis: 100%;
+    min-width: 0;
+    justify-content: center;
+  }
+
+  .copy-feedback {
+    top: calc(100% - 4px);
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .profile-scene {
+    margin-top: 18px;
+    max-width: 300px;
+  }
+
+  .profile-scene pre {
+    width: max-content;
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: clamp(6px, 1.25vw, 8px);
+  }
+
+  .nav-bar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 8px;
+    padding: 4px 0;
+    margin-bottom: 24px;
+  }
+
+  .nav-bar a {
+    min-height: 44px;
+    font-size: 14px;
+  }
+
+  section h1 {
+    font-size: 22px;
+    line-height: 1.35;
+  }
+
+  section h2 {
+    margin-top: 38px;
+    margin-bottom: 16px;
+    font-size: 21px;
+    scroll-margin-top: var(--section-nav-offset, 113px);
+  }
+
+  section h2#projects {
+    margin-top: 42px;
+    font-size: 25px;
+  }
+
+  .update-item {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "date brand" "copy copy";
+    gap: 6px 12px;
+    padding: 10px 0 10px 12px;
+  }
+
+  .update-item::before {
+    top: 15px;
+    transform: none;
+  }
+
+  .update-date { grid-area: date; }
+  .update-copy { grid-area: copy; }
+  .update-brand { grid-area: brand; }
+
   .experience-header {
     flex-direction: column;
     gap: 4px;
@@ -794,7 +921,21 @@ header footer {
   }
 
   .experience-item + .experience-item {
-    margin-top: 6px;
+    margin-top: 10px;
+  }
+
+  .experience-main {
+    display: block;
+    width: 100%;
+  }
+
+  .experience-role {
+    display: block;
+    margin-top: 4px;
+  }
+
+  .project-list {
+    padding: 14px;
   }
 
   .project-item {
@@ -804,5 +945,23 @@ header footer {
 
   .project-status {
     justify-self: start;
+  }
+
+  .award-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 3px;
+    padding: 9px 0;
+  }
+
+  .award-date {
+    text-align: left;
+    min-width: 0;
+  }
+
+  footer {
+    margin-top: 8px;
+    text-align: center;
+    overflow-wrap: anywhere;
   }
 }

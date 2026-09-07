@@ -18,7 +18,7 @@
         <h1><a href="{{ '/' | absolute_url }}">{{ site.title }}</a></h1>
 
         {% if site.logo %}
-          <img src="{{ site.logo | relative_url }}" alt="Logo" />
+          <img src="{{ site.logo | relative_url }}" alt="{{ site.title }}" width="250" height="250" />
         {% endif %}
 
         <div class="contact-links">
@@ -64,8 +64,7 @@ _____│___________________╱ ╲____________________________________
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/section-nav.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/section-nav.js' | relative_url }}?v={{ site.github.build_revision }}"></script>
     <script src="{{ '/assets/js/contact-actions.js' | relative_url }}"></script>
   </body>
 </html>

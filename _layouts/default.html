@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      try {
+        if (localStorage.getItem('theme') === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (error) {}
+    </script>
 
     {% seo %}
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
@@ -53,6 +60,17 @@ _____│___________________╱ ╲____________________________________
 </pre>
 </div>
 
+        <div class="theme-control">
+          <span class="theme-mode-label theme-mode-light" aria-hidden="true">☀ LIGHT MODE</span>
+          <label class="theme-switch">
+            <input id="theme-toggle" type="checkbox" role="switch" aria-label="Dark mode">
+            <span class="theme-switch-track" aria-hidden="true">
+              <span class="theme-switch-thumb"><span class="theme-switch-eye"></span><span class="theme-switch-eye"></span></span>
+            </span>
+          </label>
+          <span class="theme-mode-label theme-mode-dark" aria-hidden="true">DARK MODE ☾</span>
+        </div>
+
       </header>
 
       <section>
@@ -66,5 +84,6 @@ _____│___________________╱ ╲____________________________________
     </div>
     <script src="{{ '/assets/js/section-nav.js' | relative_url }}?v={{ site.github.build_revision }}"></script>
     <script src="{{ '/assets/js/contact-actions.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
   </body>
 </html>

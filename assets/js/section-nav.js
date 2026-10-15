@@ -56,7 +56,18 @@
       document.documentElement.scrollHeight - 2;
 
     if (isAtPageEnd && sections.length) {
-      activeIndex = sections.length - 1;
+      var requestedIndex = links.findIndex(function (link) {
+        return link.getAttribute('href') === window.location.hash;
+      });
+      var requestedSectionTop = requestedIndex >= 0
+        ? sections[requestedIndex].getBoundingClientRect().top
+        : -1;
+
+      // A short final section can clamp an anchor jump to the page bottom.
+      activeIndex = requestedSectionTop >= navigationOffset - 1 &&
+        requestedSectionTop < window.innerHeight
+        ? requestedIndex
+        : sections.length - 1;
     }
 
     setActiveLink(activeIndex);

@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <nav class="nav-bar" aria-label="Page sections">
   <a href="#recent-updates" data-label="Recent Updates"><span>Recent Updates</span></a>
   <a href="#research-experience" data-label="Research Experience"><span>Research Experience</span></a>
@@ -67,16 +71,16 @@ I believe intelligence emerges through interaction with the physical world. This
   </article>
 </div>
 
-## Projects
-
-<div class="project-list">
-  <article class="project-item">
-    <div class="project-content">
-      <div class="project-title">RAIN — Robotic Task Generalization with Region-Aware Interaction Networks</div>
-      <div class="project-meta">Co-first author · LG AI Research</div>
-    </div>
-    <span class="project-status">Paper Under Review</span>
-  </article>
+<div class="projects-section" id="projects" role="region" aria-labelledby="projects-title">
+  <div class="projects-header">
+    <h2 id="projects-title">Projects</h2>
+    {% include project-legend.html %}
+  </div>
+  <div class="project-list">
+    {% for project in site.data.projects %}
+      {% include project.html project=project %}
+    {% endfor %}
+  </div>
 </div>
 
 ## Awards

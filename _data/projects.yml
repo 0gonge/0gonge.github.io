@@ -1,0 +1,28 @@
+- id: rain
+  name: RAIN
+  title: Robotic Task Generalization with Region-Aware Interaction Networks
+  year: 2026
+  status: Under review
+  authors:
+    - name: Seunghun Lee
+      co_first: true
+    - name: Kyuhwan Shim
+      co_first: true
+    - name: Yeogyeong Song
+      co_first: true
+      self: true
+    - name: Seung Hwan Kim
+    - name: Sihaeng Lee
+    - name: Byoung-Tak Zhang
+    - name: Sunghoon Im
+      corresponding: true
+    - name: Gunhee Lee
+      corresponding: true
+  project_url: https://seung-hun-lee.github.io/projects/RAIN/
+  paper_url: https://arxiv.org/abs/2610.14039
+  code_url: https://github.com/Seung-Hun-Lee/RAIN
+  github_repo: Seung-Hun-Lee/RAIN
+  stars: 20
+  stars_checked_at: "2026-10-15"
+  thumbnail: /assets/images/rain-real-robot.gif
+  poster: /assets/images/rain-hero.webp

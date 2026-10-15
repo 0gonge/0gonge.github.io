@@ -1,0 +1,9 @@
+{% assign projects_have_co_first = false %}
+{% for research in site.data.projects %}
+  {% for author in research.authors %}
+    {% if author.co_first %}{% assign projects_have_co_first = true %}{% endif %}
+  {% endfor %}
+{% endfor %}
+{% if projects_have_co_first %}
+<p class="project-legend" id="project-author-legend">* Co-first authors</p>
+{% endif %}

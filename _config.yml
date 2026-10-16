@@ -3,6 +3,7 @@ logo: /assets/images/profile.jpg
 description: ""
 theme: jekyll-theme-minimal
 show_downloads: false
+ga4_measurement_id: G-V6734S371R
 exclude:
   - CV_song.pdf
   - Gemfile

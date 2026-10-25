@@ -60,15 +60,39 @@ header h1 a:visited {
   margin: 0 auto 20px auto;
 }
 
-/* 사진 */
-header img {
+/* Profile photo swaps to the robot photo on hover. */
+.profile-photo {
+  position: relative;
+  width: 256px;
+  height: 256px;
+  max-width: 100%;
+  margin-bottom: 16px;
+}
+
+header .profile-photo img {
+  position: absolute;
+  inset: 0;
   display: block;
-  margin: 0 auto 16px auto;
-  width: 250px;
-  height: 250px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #009000;
+}
+
+header .profile-photo .profile-photo-hover {
+  object-fit: contain;
+  background: #000;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+@media (hover: hover) {
+  .profile-photo:hover .profile-photo-hover {
+    opacity: 1;
+  }
 }
 
 /* 소개 */
@@ -1212,6 +1236,10 @@ html[data-theme="dark"] .profile-scene pre {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  header .profile-photo-hover {
+    transition: none;
+  }
+
   .vision-emoji,
   .profile-scene .arm,
   .profile-scene .eye::after {
@@ -1279,9 +1307,9 @@ header footer {
     margin-right: auto;
   }
 
-  header img {
-    width: 180px;
-    height: 180px;
+  .profile-photo {
+    width: 186px;
+    height: 186px;
   }
 
   section,
@@ -1333,10 +1361,9 @@ header footer {
     font-size: 26px;
   }
 
-  header img {
+  .profile-photo {
     width: 144px;
     height: 144px;
-    box-sizing: border-box;
     margin-bottom: 8px;
   }
 
